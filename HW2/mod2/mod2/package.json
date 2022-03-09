@@ -1,0 +1,42 @@
+{
+  "name": "react_skillbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
+    "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
+    "dev": "env NODE_ENV=development node ./bin/dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@hot-loader/react-dom": "^17.0.1",
+    "@types/jest": "^27.0.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^3.4.2",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "^26.6.3",
+    "react-hot-loader": "^4.13.0",
+    "style-loader": "^1.1.3",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^8.0.13",
+    "typescript": "^4.3.5",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-dev-server": "^3.11.1",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "dependencies": {
+    "tsc": "^2.0.3",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.64.1"
+  }
+}

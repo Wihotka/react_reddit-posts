@@ -1,0 +1,23 @@
+@import '../../../../variables';
+
+.commentsButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.commentsButton * {
+    color: $grayC4;
+}
+
+.commentsNumber {
+    padding: 0 0 0 6px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+@media all and (min-width: 1024px) {
+    .commentsButton {
+        display: none;
+    }
+}

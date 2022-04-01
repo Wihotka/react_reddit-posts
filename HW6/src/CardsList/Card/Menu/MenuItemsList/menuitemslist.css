@@ -1,0 +1,85 @@
+.menuItemsList {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--white);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.menuItem {
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 23px;
+}
+
+.menuItemDesktop {
+    align-self: flex-start;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 23px;
+}
+
+.menuItem > span {
+    margin-left: 5px;
+    font-size: 14px;
+    color: var(--gray99);
+}
+
+.menuItemDesktop > span {
+    margin-left: 5px;
+    font-size: 14px;
+    color: var(--gray99);
+}
+
+.separator {
+    width: 80%;
+    height: 1px;
+    background-color: var(--grayEC);
+}
+
+.separatorDesktop {
+    display: none;
+    width: 80%;
+    height: 1px;
+    background-color: var(--grayEC);
+}
+
+.closeButton {
+    width: 100%;
+    padding: 12px 23px;
+    border-radius: 0 0 3px 3px;
+    color: var(--gray66);
+    background-color: var(--grayD9);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+@media all and (min-width: 1024px) {
+    .menuItemsList {
+        top: 10px;
+    }
+
+    .menuItem {
+        padding: 6px 23px;
+    }
+
+    .menuItemDesktop {
+        display: flex;
+    }
+
+    .separatorDesktop {
+        display: block;
+    }
+
+    .closeButton {
+        display: none;
+    }
+}

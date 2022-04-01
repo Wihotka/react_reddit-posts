@@ -1,0 +1,19 @@
+.header {
+    margin-bottom: 20px;
+}
+
+@media all and (min-width: 1024px) {
+    .header {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        margin-bottom: 0;
+        padding: 40px;
+    }
+}
+
+@media all and (min-width: 1540px) {
+    .header {
+        padding: 67px 0;
+    }
+}

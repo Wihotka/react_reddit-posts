@@ -1,0 +1,61 @@
+.authBlock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+.authBlock span {
+    transition: 150ms ease-in-out;
+}
+
+.authBlock:hover span {
+    color: var(--orange);
+}
+
+.avatarBlock {
+    display: flex;
+    padding: 4px;
+    border-radius: 100%;
+    box-shadow: none;
+    transition: 150ms ease-in-out;
+}
+
+.authBlock:hover .avatarBlock {
+    box-shadow: 0 0 0 1px var(--orange);
+}
+
+.avatarImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.username {
+    display: none;
+}
+
+@media all and (min-width: 1024px) {
+    .authBlock {
+        order: 4;
+        position: relative;
+        flex-direction: row;
+    }
+
+    .avatarBlock {
+        margin-right: 24px;
+        margin-left: 16px;
+        transform: scale(1.8);
+    }
+
+    .username {
+        display: flex;
+    }
+}

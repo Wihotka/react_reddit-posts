@@ -5,26 +5,48 @@ import { Preview } from './Preview';
 import { Menu } from './Menu';
 import { Controls } from './Controls';
 
-
-interface ICardProps {
-  content: Array<string>;
+interface IDefaultContent {
+  iconImg: string;
+  iconLabel: string;
+  previewImg: string;
+  previewLabel: string;
 }
 
-export function Card({ content } : ICardProps) {
+interface ICardProps {
+  title: string;
+  author: string;
+  postUrl: string;
+  previewImg: string;
+  userUrl: string;
+  createdAgo: number;
+  defaultContent: IDefaultContent;
+}
+
+export function Card({
+  title,
+  author,
+  postUrl,
+  previewImg,
+  userUrl,
+  createdAgo,
+  defaultContent
+} : ICardProps) {
+  const hoursPassed = Math.floor((Date.now() - createdAgo*1000)/(1000*3600));
+
   return (
     <li className={styles.card}>
       <TextContent 
-        text={content[0]}
-        postUrl={content[1]}
+        text={title}
+        postUrl={postUrl}
         user={{
-          url: content[2],
-          name: content[3],
-          avatarUrl: content[4],
-          label: content[5]
+          url: userUrl,
+          name: author,
+          avatarUrl: defaultContent.iconImg,
+          label: defaultContent.iconLabel
         }}
-        hoursAgo={content[6]}
+        hoursAgo={`${hoursPassed}`}
       />
-      <Preview imageUrl={content[7]} label={content[8]} />
+      <Preview imageUrl={previewImg} label={defaultContent.previewLabel} />
       <Menu />
       <Controls />
     </li>

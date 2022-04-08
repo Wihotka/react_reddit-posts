@@ -3,6 +3,6 @@ import styles from './threadtitle.css';
 
 export function ThreadTitle() {
   return (
-    <h1 className={styles.threadTitle}>Reddit Post</h1>
+    <h1 className={styles.threadTitle}>Best Reddit Posts</h1>
   );
 }

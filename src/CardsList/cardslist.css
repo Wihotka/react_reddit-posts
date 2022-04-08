@@ -1,3 +1,11 @@
+.cardList > li {
+    margin-bottom: 20px;
+}
+
+.cardList > li:last-child {
+    margin-bottom: 0;
+}
+
 @media all and (min-width: 1024px) {
     .cardsList {
         padding: 40px;

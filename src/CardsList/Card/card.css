@@ -15,12 +15,12 @@
 @media all and (min-width: 1024px) {
     .card {
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 2fr 0.5fr;
+        grid-template-columns: 0.75fr 2.5fr 0.5fr;
     }
 }
 
 @media all and (min-width: 1540px) {
-    .card:hover h2 a {
+    .card:hover h2 {
         color: var(--orange);
     }
 }

@@ -14,7 +14,7 @@ interface ITextContentProps<T> {
 }
 
 export function TextContent({ text, postUrl, user, hoursAgo }: ITextContentProps<string>) {
-  let hourText;
+  let hourText = 'часов';
   
   switch (hoursAgo) {
     case '1':
@@ -39,7 +39,7 @@ export function TextContent({ text, postUrl, user, hoursAgo }: ITextContentProps
         </div>
         <span className={styles.createdAt}>
           <span className={styles.publishedLabel}>опубликовано </span>
-          {hoursAgo} {hourText ? hourText : 'часов'} назад
+          {hoursAgo} {hourText} назад
         </span>
       </div>
       <h2 className={styles.title}>

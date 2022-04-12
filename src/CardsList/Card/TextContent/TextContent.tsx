@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './textcontent.css';
 
 interface ITextContentProps<T> {
@@ -14,8 +14,9 @@ interface ITextContentProps<T> {
 }
 
 export function TextContent({ text, postUrl, user, hoursAgo }: ITextContentProps<string>) {
-  let hourText;
-  
+  const [isModalOpened, setIsModalOpened] = useState(false);
+
+  let hourText = 'часов';
   switch (hoursAgo) {
     case '1':
     case '21':
@@ -31,7 +32,12 @@ export function TextContent({ text, postUrl, user, hoursAgo }: ITextContentProps
 
   return (
     <div className={styles.textContent}>
-      <a href={postUrl} className={styles.postLink}></a>
+      <a href={postUrl} className={styles.postLink} onClick={ () => setIsModalOpened(true) }></a>
+
+      {isModalOpened && (
+        <div>Открытый пост</div>
+      )}
+
       <div className={styles.metaData}>
         <div className={styles.userLink}>
           <img className={styles.avatar} src={user.avatarUrl} alt={user.label} />
@@ -39,7 +45,7 @@ export function TextContent({ text, postUrl, user, hoursAgo }: ITextContentProps
         </div>
         <span className={styles.createdAt}>
           <span className={styles.publishedLabel}>опубликовано </span>
-          {hoursAgo} {hourText ? hourText : 'часов'} назад
+          {hoursAgo} {hourText} назад
         </span>
       </div>
       <h2 className={styles.title}>

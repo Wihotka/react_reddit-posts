@@ -1,21 +1,21 @@
 .commentsButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .commentsButton * {
-    color: var(--grayC4);
+  color: var(--grayC4);
 }
 
 .commentsNumber {
-    padding: 0 0 0 6px;
-    font-size: 12px;
-    line-height: 14px;
+  padding: 0 0 0 6px;
+  font-size: 12px;
+  line-height: 14px;
 }
 
 @media all and (min-width: 1024px) {
-    .commentsButton {
-        display: none;
-    }
+  .commentsButton {
+    display: none;
+  }
 }

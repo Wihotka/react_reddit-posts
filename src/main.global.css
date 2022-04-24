@@ -1,47 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-/* colors variables */
 :root {
-    --black: #333;
-    --white: #fff;
-    --orange: #cc6633;
-    --green: #a4cc33;
-    --grayF4: #f4f4f4;
-    --grayF3: #f3f3f3;
-    --grayEC: #ececec;
-    --grayD9: #d9d9d9;
-    --grayC4: #c4c4c4;
-    --gray99: #999;
-    --gray66: #666;
+  /* colors variables */
+  --black: #333;
+  --blackOpacity: rgba(0, 0, 0, 0.3);
+  --white: #fff;
+  --orange: #cc6633;
+  --green: #a4cc33;
+  --grayF4: #f4f4f4;
+  --grayF3: #f3f3f3;
+  --grayEC: #ececec;
+  --grayD9: #d9d9d9;
+  --grayC4: #c4c4c4;
+  --gray99: #999;
+  --gray66: #666;
+  /* animation variables */
+  --timer: .2s;
 }
 
 * {
-    box-sizing: border-box;
-    color: var(--black);
+  box-sizing: border-box;
+  color: var(--black);
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--grayF4);
-    font-family: 'Roboto', serif;
-    font-size: 14px;
-    line-height: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--grayF4);
+  font-family: 'Roboto', serif;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 button {
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }

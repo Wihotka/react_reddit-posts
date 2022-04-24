@@ -1,0 +1,41 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: var(--blackOpacity);
+}
+
+.modal {
+  position: relative;
+  top: 10%;
+  left: 50%;
+  width: fit-content;
+  min-width: 375px;
+  max-width: 1024px;
+  padding: 20px 40px;
+  border: 1px solid var(--black);
+  border-radius: 10px;
+  transform: translateX(-50%);
+  overflow-x: hidden;
+  background-color: var(--grayEC);
+}
+
+.title {
+  margin-bottom: 12px;
+  color: var(--black);
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.link {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--orange);
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}

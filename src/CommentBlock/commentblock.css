@@ -1,0 +1,9 @@
+.commentBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainTitle {
+  margin: 0;
+  margin-bottom: 8px;
+}

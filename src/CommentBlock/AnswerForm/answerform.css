@@ -1,0 +1,39 @@
+.author {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.message {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.comment {
+  padding: 16px;
+  border-bottom: 1px solid var(--grayC4);
+}
+.comment:last-child {
+  border-bottom: none;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+}
+
+.input {
+  flex-grow: 1;
+  margin-right: 16px;
+  border: none;
+  border-bottom: 2px solid var(--gray99);
+  background-color: transparent;
+}
+.input:focus {
+  border-color: var(--black);
+  outline: none;
+}
+
+.button {
+  padding: 4px;
+  color: var(--orange);
+}

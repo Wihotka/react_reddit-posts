@@ -1,50 +1,50 @@
 .sortContainer {
-    width: fit-content;
+  width: fit-content;
 }
 
 .sortBtn {
-    padding: 11px 20px;
-    border-radius: 7px;
-    color: var(--orange);
-    font-size: 18px;
+  padding: 11px 20px;
+  border-radius: 7px;
+  color: var(--orange);
+  font-size: 18px;
 }
 
 .list {
-    width: fit-content;
-    margin-left: 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--grayD9);
+  width: fit-content;
+  margin-left: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--grayD9);
 }
 
 .list > li {
-    padding: 4px 8px;
-    border-bottom: 1px solid var(--grayC4);
-    color: var(--gray66);
-    font-size: 14px;
-    text-align: center;
-    transition: 150ms ease-in-out;
-    cursor: pointer;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--grayC4);
+  color: var(--gray66);
+  font-size: 14px;
+  text-align: center;
+  transition: 150ms ease-in-out;
+  cursor: pointer;
 }
 
 .list > li:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .list > li:hover,
 .list > li:active {
-    color: var(--orange);
+  color: var(--orange);
 }
 
 @media all and (min-width: 1024px) {
-    .sortBtn {
-        margin: 0;
-        padding: 0;
-        border-radius: 0;
-        background-color: transparent;
-    }
+  .sortBtn {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
 
-    .list {
-        margin-left: 0;
-    }
+  .list {
+    margin-left: 0;
+  }
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Post } from '../../../Post';
 import styles from './textcontent.css';
 
 interface ITextContentProps<T> {
@@ -32,10 +33,14 @@ export function TextContent({ text, postUrl, user, hoursAgo }: ITextContentProps
 
   return (
     <div className={styles.textContent}>
-      <a href={postUrl} className={styles.postLink} onClick={ () => setIsModalOpened(true) }></a>
+      <button className={styles.postBtn} onClick={ () => setIsModalOpened(true) }></button>
 
       {isModalOpened && (
-        <div>Открытый пост</div>
+        <Post
+          title={text}
+          postUrl={postUrl}
+          onClose={() => { setIsModalOpened(false); }}
+        />
       )}
 
       <div className={styles.metaData}>

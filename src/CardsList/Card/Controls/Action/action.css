@@ -1,11 +1,11 @@
 .action {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 @media all and (min-width: 1024px) {
-    .action {
-        display: none;
-    }
+  .action {
+    display: none;
+  }
 }

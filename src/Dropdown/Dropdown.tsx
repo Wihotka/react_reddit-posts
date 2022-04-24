@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './dropdown.css';
+import { DropdownList } from './DropdownList';
 
 interface IDropdownProps {
   button: React.ReactNode;
@@ -19,6 +20,7 @@ export function Dropdown({
   onClose = NOOP
 }: IDropdownProps) {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(isOpen);
+
   React.useEffect(() => setIsDropdownOpen(isOpen), [isOpen]);
   React.useEffect(() => isDropdownOpen ? onOpen() : onClose(), [isDropdownOpen]);
 
@@ -33,10 +35,10 @@ export function Dropdown({
       <div onClick={handleOpen}>
         {button}
       </div>
-      <div className={styles.listContainer}>
-        <div className={isDropdownOpen ? styles.list + ' ' + styles.listActive : styles.list} onClick={() => setIsDropdownOpen(false)}>
-          {children}
-        </div>
+      <div className={styles.listContainer} id="dropdown-root">
+        {isDropdownOpen &&
+          <DropdownList children={children} onElemClick={() => setIsDropdownOpen(false)} />
+        }
       </div>
     </div>
   );

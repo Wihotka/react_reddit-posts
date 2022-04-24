@@ -1,19 +1,19 @@
 .controls {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(3, 1fr);
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    padding: 10px 20px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
 @media all and (min-width: 1024px) {
-    .controls {
-        grid-row: 1 / span 1;
-        grid-column: 3 / span 1;
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr;
-        align-items: center;
-        margin-left: auto;
-    }
+  .controls {
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    align-items: center;
+    margin-left: auto;
+  }
 }

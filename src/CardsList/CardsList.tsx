@@ -10,14 +10,14 @@ const defaultContent = {
   previewLabel: 'photo'
 }
 
-export function CardsList() { 
+export function CardsList() {
   const data = useContext(postsContext);
   let cards;
 
   if (Array.isArray(data)) {
     cards = data.map((elem) => {
       return (
-        <Card 
+        <Card
           key={elem.id}
           title={elem.title}
           author={elem.author}

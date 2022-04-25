@@ -22,7 +22,6 @@ export function AnswerForm({author, message}: IAnswerFormProps) {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     console.log(value);
-    // console.log(ref.current?.value);
   }
 
   function handleFocus() {
@@ -46,18 +45,4 @@ export function AnswerForm({author, message}: IAnswerFormProps) {
       }
     </div>
   );
-
-  // return (
-  //   <div className={styles.comment}>
-  //     <h4 className={styles.author}>{author}</h4>
-  //     <p className={styles.message}>{message}</p>
-  //     <button className={styles.button} onClick={handleAnswer}>Ответить</button>
-  //     {isAnswered &&
-  //       <form className={styles.form} onSubmit={handleSubmit}>
-  //         <input type="text" className={styles.input} ref={ref} defaultValue={author + ', '} onFocus={handleFocus} />
-  //         <button className={styles.button}>Ответить</button>
-  //       </form>
-  //     }
-  //   </div>
-  // );
 }

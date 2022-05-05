@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { CommentBlock } from '../CommentBlock';
-import { CommentForm } from '../CommentForm';
+import { CommentFormContainer } from '../CommentFormContainer';
 import styles from './post.css';
 
 interface IPostProps {
@@ -35,7 +35,7 @@ export function Post({ title, postUrl, onClose }: IPostProps) {
       <div className={styles.modal} ref={ref}>
         <h2 className={styles.title}>{title}</h2>
         <a href={postUrl} className={styles.link}>check full reddit post</a>
-        <CommentForm />
+        <CommentFormContainer />
         <CommentBlock />
       </div>
     </div>

@@ -24,8 +24,6 @@ export function SortBlock() {
     <div className={styles.sortContainer}>
       <Dropdown
         button={<button className={styles.sortBtn}>Dropdown</button>}
-        onOpen={() => console.log('opened')}
-        onClose={() => console.log('closed')}
       >
         <ul className={styles.list}>
           <GenericList list={LIST.map(merge({ onClick: handleItemClick }))} />

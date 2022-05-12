@@ -1,28 +1,11 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import { EIcons, Icon } from '../../Icon';
-import { setToken, TRootState } from '../../store';
 import { EColor, Text } from '../../Text';
-import queryString from 'query-string';
 import styles from './authblock.css';
+import { useUserData } from '../../hooks/useUserData';
 
-interface IAuthBlockProps {
-  avatarSrc?: string;
-  username?: string;
-}
-
-export function AuthBlock({ avatarSrc, username }: IAuthBlockProps) {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const url = new URL(window.location.href);
-    const urlParams = queryString.parse(url.hash);
-
-    if (urlParams.access_token) {
-      const urlToken: string = urlParams.access_token as string;
-      dispatch(setToken(urlToken));
-    }
-  }, []);
+export function AuthBlock() {
+  const { data, loading } = useUserData();
 
   return (
     <a
@@ -30,14 +13,18 @@ export function AuthBlock({ avatarSrc, username }: IAuthBlockProps) {
       className={styles.authBlock}
     >
       <div className={styles.avatarBlock}>
-        {avatarSrc ?
-          <img src={avatarSrc} alt="user avatar" className={styles.avatarImg} /> :
+        {data.iconImg ?
+          <img src={data.iconImg} alt="user avatar" className={styles.avatarImg} /> :
           <Icon name={EIcons.avatar} size={32} />
         }
       </div>
 
       <div className={styles.username}>
-        <Text size={20} color={username ? EColor.black : EColor.gray99}>{username || 'Аноним'}</Text>
+        {loading ? (
+          <Text size={20} color={EColor.gray99}>Загрузка...</Text>
+        ) : (
+          <Text size={20} color={data.name ? EColor.black : EColor.gray99}>{data.name || 'Аноним'}</Text>
+        )}
       </div>
     </a>
   );

@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './main.global.css';
 import { Layout } from './Layout';
 import { Header } from './Header';
 import { Content } from './Content';
 import { CardsList } from './CardsList';
 import { PostsContextProvider } from './context/postsContext';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { rootReducer } from './store';
+import { rootReducer } from './store/reducer';
+import thunk from 'redux-thunk';
+import { saveToken } from './store/token/actions';
 
-const store = createStore(rootReducer, composeWithDevTools());
+const store = createStore(rootReducer, composeWithDevTools(
+  applyMiddleware(thunk),
+));
 
 function AppComponent() {
+  useEffect(() => {
+    store.dispatch(saveToken());
+  }, []);
+
   return (
     <Provider store={store}>
       <Layout>

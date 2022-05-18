@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './main.global.css';
 import { Layout } from './Layout';
 import { Header } from './Header';
@@ -10,7 +10,6 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { rootReducer } from './store/reducer';
 import thunk from 'redux-thunk';
-import { saveToken } from './store/token/actions';
 
 const store = createStore(rootReducer, composeWithDevTools(
   applyMiddleware(thunk),

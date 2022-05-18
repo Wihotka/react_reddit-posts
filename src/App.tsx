@@ -17,10 +17,6 @@ const store = createStore(rootReducer, composeWithDevTools(
 ));
 
 function AppComponent() {
-  useEffect(() => {
-    store.dispatch(saveToken());
-  }, []);
-
   return (
     <Provider store={store}>
       <Layout>

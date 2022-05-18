@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState} from 'react';
+import React, { useState} from 'react';
 import styles from './commentform.css';
 import { Formik } from 'formik';
 

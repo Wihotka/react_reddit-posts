@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { EIcons, Icon } from '../../Icon';
 import { EColor, Text } from '../../Text';
 import styles from './authblock.css';
 import { useUserData } from '../../hooks/useUserData';
+import { saveToken } from '../../store/token/actions';
+import { useDispatch } from 'react-redux';
 
 export function AuthBlock() {
   const { data, loading } = useUserData();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(saveToken());
+  }, []);
+
 
   return (
     <a

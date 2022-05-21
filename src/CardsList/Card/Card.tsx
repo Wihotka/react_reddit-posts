@@ -35,7 +35,7 @@ export function Card({
 
   return (
     <li className={styles.card}>
-      <TextContent 
+      <TextContent
         text={title}
         postUrl={postUrl}
         user={{

@@ -4,7 +4,6 @@ import { Layout } from './Layout';
 import { Header } from './Header';
 import { Content } from './Content';
 import { CardsList } from './CardsList';
-import { PostsContextProvider } from './context/postsContext';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -20,11 +19,9 @@ function AppComponent() {
     <Provider store={store}>
       <Layout>
         <Header />
-        <PostsContextProvider>
-          <Content>
-            <CardsList />
-          </Content>
-        </PostsContextProvider>
+        <Content>
+          <CardsList />
+        </Content>
       </Layout>
     </Provider>
   );

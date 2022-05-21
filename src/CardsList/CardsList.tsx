@@ -21,6 +21,7 @@ export function CardsList() {
   const [errorLoading, setErrorLoading] = useState('');
 
   const bottomOfList = useRef<HTMLDivElement>(null);
+  const MAX_COUNTER_NUMBER = 2;
 
   useEffect(() => {
     if (!token) return;
@@ -88,10 +89,10 @@ export function CardsList() {
 
       {cards}
 
-      {counter === 2 && (
+      {counter === MAX_COUNTER_NUMBER && (
         <button onClick={handleClick} className={styles.showMore}>Загрузить ещё</button>
       )}
-      {counter !== 2 && !loading && !errorLoading && (
+      {counter !== MAX_COUNTER_NUMBER && !loading && !errorLoading && (
         <div ref={bottomOfList} />
       )}
 

@@ -13,20 +13,22 @@ interface IDefaultContent {
 }
 
 interface ICardProps {
+  id: string;
   title: string;
   author: string;
-  postUrl: string;
   previewImg: string;
+  postUrl: string;
   userUrl: string;
   createdAgo: number;
   defaultContent: IDefaultContent;
 }
 
 export function Card({
+  id,
   title,
   author,
-  postUrl,
   previewImg,
+  postUrl,
   userUrl,
   createdAgo,
   defaultContent
@@ -36,6 +38,7 @@ export function Card({
   return (
     <li className={styles.card}>
       <TextContent
+        id={id}
         text={title}
         postUrl={postUrl}
         user={{

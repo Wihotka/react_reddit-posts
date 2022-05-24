@@ -25,9 +25,14 @@ export const saveToken = (): ThunkAction<void, TRootState, unknown, Action<strin
   dispatch(setToken());
   const url = new URL(window.location.href);
   const urlParams = queryString.parse(url.hash);
+  let token: string;
 
   if (urlParams.access_token) {
-    const urlToken: string = urlParams.access_token as string;
-    dispatch(setTokenSuccess(urlToken));
+    token = urlParams.access_token as string;
+    dispatch(setTokenSuccess(token));
+    sessionStorage.setItem('token', token);
+  } else if (sessionStorage.getItem('token')) {
+    token = sessionStorage.getItem('token') as string;
+    dispatch(setTokenSuccess(token));
   }
 }

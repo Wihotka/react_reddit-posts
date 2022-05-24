@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 24px;
+}
+
+.heading {
+  margin: 0 0 20px;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.text {
+  max-width: 768px;
+  margin: 0 0 40px;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.link {
+  padding: 16px 32px;
+  border-radius: 8px;
+  color: var(--white);
+  background-color: var(--orange);
+  font-size: 20px;
+  line-height: 20px;
+}

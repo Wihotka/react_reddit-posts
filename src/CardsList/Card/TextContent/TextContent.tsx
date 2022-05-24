@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, Route } from 'react-router-dom';
 import { Post } from '../../../Post';
+import { setPost } from '../../../store/reducer';
 import styles from './textcontent.css';
 
 interface ITextContentProps<T> {
+  id: T;
   text: T;
   postUrl: T;
   user: {
@@ -14,8 +18,19 @@ interface ITextContentProps<T> {
   hoursAgo: T;
 }
 
-export function TextContent({ text, postUrl, user, hoursAgo }: ITextContentProps<string>) {
-  const [isModalOpened, setIsModalOpened] = useState(false);
+export function TextContent({ id, text, postUrl, user, hoursAgo }: ITextContentProps<string>) {
+  const [urlPath, setUrlPath] = useState('');
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setUrlPath(window.location.pathname);
+    if (urlPath === '/posts/' + id) dispatch(setPost({text, postUrl}));
+  }, [urlPath]);
+
+  function handleClick() {
+    dispatch(setPost({text, postUrl}));
+    setUrlPath('/posts/' + id);
+  }
 
   let hourText = 'часов';
   switch (hoursAgo) {
@@ -33,16 +48,8 @@ export function TextContent({ text, postUrl, user, hoursAgo }: ITextContentProps
 
   return (
     <div className={styles.textContent}>
-      <button className={styles.postBtn} onClick={ () => setIsModalOpened(true) }></button>
-
-      {isModalOpened && (
-        <Post
-          title={text}
-          postUrl={postUrl}
-          onClose={() => { setIsModalOpened(false); }}
-        />
-      )}
-
+      <Link to={'/posts/' + id} onClick={handleClick} className={styles.postLink} />
+      {urlPath === '/posts/' + id && (<Route path="/posts/:id" component={Post} />)}
       <div className={styles.metaData}>
         <div className={styles.userLink}>
           <img className={styles.avatar} src={user.avatarUrl} alt={user.label} />

@@ -1,22 +1,21 @@
 import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { CommentBlock } from '../CommentBlock';
-import { CommentFormContainer } from '../CommentFormContainer';
+import { CommentForm } from '../CommentForm';
+import { TPostState, TRootState } from '../store/reducer';
 import styles from './post.css';
 
-interface IPostProps {
-  title: string;
-  postUrl: string;
-  onClose?: () => void;
-}
-
-export function Post({ title, postUrl, onClose }: IPostProps) {
+export function Post() {
   const ref = useRef<HTMLDivElement>(null);
+  const history = useHistory();
+  const post: TPostState = useSelector<TRootState>(state => state.post) as TPostState;
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (e.target instanceof Node && !ref.current?.contains(e.target)) {
-        onClose?.();
+        history.push('/posts');
       }
     }
 
@@ -33,9 +32,9 @@ export function Post({ title, postUrl, onClose }: IPostProps) {
   return ReactDOM.createPortal((
     <div className={styles.background}>
       <div className={styles.modal} ref={ref}>
-        <h2 className={styles.title}>{title}</h2>
-        <a href={postUrl} className={styles.link}>check full reddit post</a>
-        <CommentFormContainer />
+        <h2 className={styles.title}>{post.text}</h2>
+        <a href={post.postUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>check full reddit post</a>
+        <CommentForm />
         <CommentBlock />
       </div>
     </div>

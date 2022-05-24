@@ -44,7 +44,6 @@ export function CardsList() {
       } finally {
         setLoading(false);
         setCounter(counter + 1);
-        console.log(counter);
       }
     }
 
@@ -70,10 +69,11 @@ export function CardsList() {
     return (
       <Card
         key={data.id}
+        id={data.id}
         title={data.title}
         author={data.author}
-        postUrl={`https://www.reddit.com${data.permalink}`}
         previewImg={data.thumbnail.length > 10 ? data.thumbnail : defaultContent.previewImg}
+        postUrl={`https://www.reddit.com${data.permalink}`}
         userUrl={`https://www.reddit.com/user/${data.author}`}
         createdAgo={data.created}
         defaultContent={defaultContent}

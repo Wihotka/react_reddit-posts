@@ -4,10 +4,15 @@ import { meReducer, TMeState } from "./me/reducer";
 import { TSetTokenAction, TSetTokenSuccessAction, SET_TOKEN, SET_TOKEN_SUCCESS } from "./token/actions";
 import { tokenReducer, TTokenState } from "./token/reducer";
 
+export type TPostState = {
+  text: string;
+  postUrl: string;
+}
 export type TRootState = {
   commentText: string;
   token: TTokenState;
   me: TMeState,
+  post: TPostState,
 }
 const initialState: TRootState = {
   commentText: 'Hello Skillbox!',
@@ -19,13 +24,18 @@ const initialState: TRootState = {
     error: '',
     data: {},
   },
+  post: {
+    text: '',
+    postUrl: '',
+  },
 }
 type MyAction = TUpdateCommentAction
 | TSetTokenAction
 | TSetTokenSuccessAction
 | TMeRequestAction
 | TMeRequestSuccessAction
-| TMeRequestErrorAction;
+| TMeRequestErrorAction
+| TSetPostAction;
 
 const UPDATE_COMMENT = 'UPDATE_COMMENT';
 type TUpdateCommentAction = {
@@ -35,6 +45,19 @@ type TUpdateCommentAction = {
 export const updateComment: ActionCreator<TUpdateCommentAction> = (text) => ({
   type: UPDATE_COMMENT,
   text,
+});
+
+const SET_POST = 'SET_POST';
+type TSetPostAction = {
+  type: typeof SET_POST,
+  post: {
+    text: string;
+    postUrl: string;
+  },
+}
+export const setPost: ActionCreator<TSetPostAction> = (post) => ({
+  type: SET_POST,
+  post,
 });
 
 export const rootReducer: Reducer<TRootState, MyAction> = (state = initialState, action) => {
@@ -56,6 +79,11 @@ export const rootReducer: Reducer<TRootState, MyAction> = (state = initialState,
       return {
         ...state,
         me: meReducer(state.me, action),
+      }
+    case SET_POST:
+      return {
+        ...state,
+        post: action.post,
       }
     default:
       return state;

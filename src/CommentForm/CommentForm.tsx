@@ -1,38 +1,8 @@
-import React, { useState} from 'react';
+import React from 'react';
 import styles from './commentform.css';
 import { Formik } from 'formik';
 
-// type TCommentFormProps = {
-//   value: string;
-//   onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
-//   onSubmit: (e: FormEvent) => void;
-// }
-
 export function CommentForm() {
-  const [value, setValue] = useState('');
-  // const [touched, setTouched] = useState(false);
-  // const [valueError, setValueError] = useState('');
-
-  // function handleSubmit(e: FormEvent) {
-  //   e.preventDefault();
-  //   setTouched(true);
-  //   setValueError(validateText());
-
-  //   const isFormValid = !validateText();
-  //   if (!isFormValid) return;
-
-  //   alert('Форма отправлена');
-  // }
-
-  // function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
-  //   setValue(e.target.value);
-  // }
-
-  // function validateText() {
-  //   if (value.length <= 3) return 'Введите больше 3-х символов';
-  //   return '';
-  // }
-
   return (
     <Formik
       initialValues={{ text: '' }}

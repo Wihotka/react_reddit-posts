@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
-    "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
+    "build": "env NODE_ENV=production webpack --config webpack.config.js",
     "dev": "env NODE_ENV=development CLIENT_ID=Lu7reIvILvXyevit9ggWHA webpack-dev-server",
-    "test": "jest"
+    "test": "jest",
+    "start": "env NODE_ENV=production CLIENT_ID=Lu7reIvILvXyevit9ggWHA webpack-dev-server"
   },
   "author": "Paul Finagin",
   "license": "ISC",
@@ -25,9 +29,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
-    "unique-names-generator": "^4.7.1"
-  },
-  "devDependencies": {
+    "unique-names-generator": "^4.7.1",
     "@types/jest": "^27.4.1",
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.13",

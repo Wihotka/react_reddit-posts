@@ -62,7 +62,9 @@ module.exports = {
     port: PORT,
     open: true,
     hot: IS_DEV,
-    historyApiFallback: true
+    historyApiFallback: true,
+    compress: IS_PROD,
+    disableHostCheck: true
   },
   devtool: setupDevTool()
 };

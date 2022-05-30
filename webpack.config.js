@@ -63,7 +63,8 @@ module.exports = {
     open: true,
     hot: IS_DEV,
     historyApiFallback: true,
-    compress: IS_PROD
+    compress: IS_PROD,
+    allowedHosts: 'all'
   },
   devtool: setupDevTool()
 };

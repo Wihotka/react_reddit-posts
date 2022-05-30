@@ -11,7 +11,7 @@
     "build": "env NODE_ENV=production webpack --config webpack.config.js",
     "dev": "env NODE_ENV=development CLIENT_ID=Lu7reIvILvXyevit9ggWHA webpack-dev-server",
     "test": "jest",
-    "start": "env NODE_ENV=production CLIENT_ID=Lu7reIvILvXyevit9ggWHA webpack-dev-server --port 5000 --host 0.0.0.0"
+    "start": "env NODE_ENV=production CLIENT_ID=Lu7reIvILvXyevit9ggWHA webpack-dev-server --port $PORT --host 0.0.0.0"
   },
   "author": "Paul Finagin",
   "license": "ISC",

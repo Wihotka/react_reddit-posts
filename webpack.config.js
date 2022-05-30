@@ -7,6 +7,7 @@ const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV === 'development';
 const IS_PROD = NODE_ENV === 'production';
 const GLOBAL_CSS_REGEXP = /\.global.css$/i;
+const PORT = process.env.PORT || 5000;
 
 function setupDevTool() {
   if (IS_DEV) return 'eval';
@@ -58,7 +59,7 @@ module.exports = {
     new DefinePlugin({ 'process.env.CLIENT_ID': `'${process.env.CLIENT_ID}'` }),
   ],
   devServer: {
-    port: 5000,
+    port: PORT,
     open: true,
     hot: IS_DEV,
     historyApiFallback: true,

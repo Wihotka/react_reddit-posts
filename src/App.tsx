@@ -18,23 +18,24 @@ const store = createStore(rootReducer, composeWithDevTools(
 
 function AppComponent() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/posts">
-            <Layout>
-              <Header />
-              <Content>
-                <CardsList />
-              </Content>
-            </Layout>
-          </Route>
-          <Redirect exact from="/" to="/posts" />
-          <Redirect from="/auth" to="/posts" />
-          <Route component={NotFoundPage} />
-        </Switch>
-      </BrowserRouter>
-    </Provider>
+    <div>FFFFFFFFFFF</div>
+    // <Provider store={store}>
+    //   <BrowserRouter>
+    //     <Switch>
+    //       <Route path="/posts">
+    //         <Layout>
+    //           <Header />
+    //           <Content>
+    //             <CardsList />
+    //           </Content>
+    //         </Layout>
+    //       </Route>
+    //       <Redirect exact from="/" to="/posts" />
+    //       <Redirect from="/auth" to="/posts" />
+    //       <Route component={NotFoundPage} />
+    //     </Switch>
+    //   </BrowserRouter>
+    // </Provider>
   );
 }
 

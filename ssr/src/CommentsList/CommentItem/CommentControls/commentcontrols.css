@@ -1,0 +1,15 @@
+.controls{
+    display: flex;
+    align-items: center;
+}
+
+.controls button{
+    display: flex;
+    align-items: center;
+    margin-right: 27px;
+}
+
+.buttonText{
+    color: var(--grey99);
+    margin-left: 5px;
+}

@@ -1,0 +1,16 @@
+.rateBlock{
+    width: 20px;
+    height: 100%;
+    margin-right: 22px;
+    flex-shrink: 0;
+}
+
+.rateBlock:after{
+    content: '';
+    width: 3px;
+    height: calc(100% - 70px);
+    position: absolute;
+    left: 8px;
+    margin-top: 20px;
+    background: var(--greyD9);
+}

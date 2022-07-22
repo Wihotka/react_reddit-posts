@@ -1,0 +1,51 @@
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s12 {
+    width: 12px;
+    height: 12px;
+}
+
+.s16 {
+    width: 16px;
+    height: 16px;
+}
+
+@media all and (min-width: 320px) and (max-width: 1023px) {
+    .m12 {
+        width: 12px;
+        height: 12px;
+    }
+
+    .m16 {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1539px) {
+    .t12 {
+        width: 12px;
+        height: 12px;
+    }
+
+    .t16 {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media all and (min-width: 1540px) {
+    .d12 {
+        width: 12px;
+        height: 12px;
+    }
+
+    .d16 {
+        width: 16px;
+        height: 16px;
+    }
+}

@@ -1,0 +1,10 @@
+@media all and (min-width: 1024px) {
+    .main {
+        background-color: var(--white);
+        padding: 40px 0;
+    }
+}
+
+.main {
+
+}

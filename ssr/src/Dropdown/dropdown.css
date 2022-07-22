@@ -1,0 +1,18 @@
+.container{
+    width: 100%;
+    flex: 1 1 0%;
+}
+
+.listContainer{
+    position: fixed;
+    top: 15%;
+    right: 15%;
+    z-index: 99999;
+}
+
+.list {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+}

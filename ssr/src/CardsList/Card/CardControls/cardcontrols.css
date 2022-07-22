@@ -1,0 +1,16 @@
+.controls{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 1;
+}
+
+@media all and (min-width: 1024px){
+    .controls{
+        order: 4;
+    }
+}
+
+@media all and (min-width: 1540px){
+
+}

@@ -1,0 +1,10 @@
+.commentItem{
+    position: relative;
+    padding-top: 34px;
+    margin-bottom: 7px;
+    display: flex;
+}
+
+.commentText{
+    margin-bottom: 13px;
+}

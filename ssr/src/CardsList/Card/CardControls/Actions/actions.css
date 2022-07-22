@@ -1,0 +1,25 @@
+.actions{
+    display: flex;
+}
+
+.shareButton{
+    width: 20px;
+    height: 20px;
+    padding-right: 7px;
+}
+
+.saveButton{
+    width: 20px;
+    height: 20px;
+}
+
+@media all and (min-width: 1024px){
+    .actions{
+        display: none;
+    }
+}
+
+@media all and (min-width: 1540px){
+
+}
+

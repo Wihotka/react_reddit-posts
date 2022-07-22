@@ -1,0 +1,20 @@
+.comments{
+    display: flex;
+    align-items: center;
+}
+
+.commentsNumber{
+    color: var(--greyC4);
+    padding: 0 0 0 6px;
+    font-size: 12px;
+}
+
+@media all and (min-width: 1024px){
+    .comments{
+        display: none;
+    }
+}
+
+@media all and (min-width: 1540px){
+
+}

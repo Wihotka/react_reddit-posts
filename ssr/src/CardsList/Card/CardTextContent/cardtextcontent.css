@@ -1,0 +1,53 @@
+.cardLink{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    z-index: 0;
+}
+
+.textContent {
+    padding: 0 20px;
+}
+
+.metaData {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    padding: 22px 0;
+}
+
+.createdAt {
+    color: var(--grey99);
+}
+
+.publishedLabel{
+    display: none;
+    color: var(--grey99);
+}
+
+.publishedLabel:after{
+    content: ' ';
+}
+
+@media all and (min-width: 1024px) {
+    .textContent {
+        order: 2;
+        flex-basis: 50%;
+    }
+}
+
+@media all and (min-width: 1540px) {
+    .publishedLabel {
+        display: inline;
+    }
+
+    .userLink:hover a {
+        text-decoration: underline;
+    }
+
+    .textContent {
+        flex-basis: 672px;
+    }
+}

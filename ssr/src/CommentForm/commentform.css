@@ -1,0 +1,28 @@
+.form{
+    margin-bottom: 30px;
+}
+
+.input{
+    width: 100%;
+    border: 1px solid #D9D9D9;
+    border-radius: 3px 3px 0 0;
+    resize: none;
+}
+
+.input[aria-invalid]{
+    border: 1px solid red;
+}
+
+.button{
+    border: none;
+    padding: 17px 50px;
+    background: #CC6633;
+    border-radius: 0 0 3px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.button:disabled{
+    opacity: 0.5;
+    cursor: default;
+}

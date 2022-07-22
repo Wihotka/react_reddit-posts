@@ -1,0 +1,16 @@
+.loadMoreButton{
+    margin: 30px auto;
+    border: none;
+    padding: 17px 50px;
+    background: #CC6633;
+    border-radius: 0 0 3px 0;
+    color: #fff;
+    font-size: 14px;
+    display: block;
+}
+
+@media all and (min-width: 1024px){
+    .cards-list{
+        padding: 40px 0;
+    }
+}

@@ -1,0 +1,25 @@
+.searchBlock{
+    display: flex;
+    align-items: center;
+}
+
+.inputBox{
+    margin-right: 30px;
+}
+
+.inputField{
+    width: 280px;
+    height: 50px;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    border: none;
+    padding: 13px;
+    outline: none!important;
+}
+
+@media all and (min-width: 1024px) {
+    .searchBlock{
+        margin-left: auto;
+    }
+}

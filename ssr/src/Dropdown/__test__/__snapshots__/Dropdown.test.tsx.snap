@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown shold render (snapshot) 1`] = `
+<div
+  className="container"
+>
+  <div
+    onClick={[Function]}
+  >
+    <div />
+  </div>
+</div>
+`;

@@ -1,0 +1,39 @@
+.userBlock{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 11px;
+}
+
+.userBlock > * {
+    margin-right: 10px;
+}
+
+.avatarBlock{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatarImage{
+    width: 100%;
+    height: auto;
+}
+
+.userName{
+    color: var(--orange);
+}
+
+.lastLogin{
+    color: var(--grey66);
+}
+
+.groupName{
+    color: var(--black);
+    background: var(--greyD9);
+    padding: 0 7px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+}
